@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/style/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="block">
+            <img class="logo" src="assets/img/Group 14.png" alt="logo">
+            <nav class="nav_block">
+                <a class=".aa" href="#">Main Page</a>
+            </nav>
+            <nav class="nav__block">
+                <a class=".a" href="#">Calculator</a>
+            </nav>
+
+        </div>
+        <h1>Balanse</h1>
+        <div class="balanceBlock">
+            <div class="balance">
+                <div class="text">Current Account</div>
+                <div class="blockText">5,400 GHC</div>
+            </div>
+            <div class="balance1">
+                <div class="text"> Saving Account</div>
+                <div class="blockText">10,200 GHC</div>
+            </div>
+            <div class="balance2">
+               <div class="text1"> Add New Account</div>
+               <img class="img" src="./assets/img/Add Btn.png" alt="">
+            </div>
+        </div>
+        <h2>Calculator</h2>
+        <form name="calculator">
+            <table>
+                <tr>
+                    <td>Initial deposit</td>
+                    <td>
+                        <input  name="money" type="number" value="" min="0">
+                    </td>
+                </tr>
+                    <tr>
+                        <td>Monthly payment</td>
+                        <td>
+                            <input  name="monthly" type="number" value="" min="0" >
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Interest per year</td>
+                        <td>
+                            <input  name="interest" type="number" value="" min="0">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Deposit term</td>
+                        <td><input  name="months" type="number" value="" min="0"></td>
+                    </tr>
+                        <button id="button" class="button">Rasscitat</button>
+                    
+            </table>
+        </form>
+        <div id="resultText" class="text2"></div>
+    </div>
+
+<script>
+     let form = document.forms.calculator
+        
+        function calculate() {
+            
+            let initial = +form.money.value // переводим строку в число
+            if (!initial) return NaN// если строка пустая, выходим из функции
+            let interest = +form.interest.value * 0.01
+            if (!interest) return NaN
+            let year = +form.months.value / 365
+            if (!year) return NaN
+            let monthly = +form.monthly.value
+            if (!monthly) return NaN
+
+            let result = monthly * 12/interest * 
+            (Math.pow((1 + interest/12), 12 * year) - 1) 
+            + initial * Math.pow((1 + interest/12), 12 * year)
+            
+            return result
+        }
+
+        const resultText = document.getElementById('resultText')
+
+        document.getElementById('button').addEventListener('click',(e)=>{
+            e.preventDefault()
+            let result = calculate()
+            if(isNaN(result)){
+                resultText.innerText = 'Ошибка входных параметров'  
+            }else{
+                resultText.innerText = 'Результат расчета : ' + Math.round(result)   
+            }
+        })
+
+</script>
+    
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="link_container">
+       
+    </div>
+    <script>
+        el = document.createElement('a')
+        document.getElementById('link_container').append(el)
+        let question = prompt('хотите взять кредит?').toUpperCase()
+        if (question === 'DA'|| 'ДА'){
+          el.setAttribute('href', "https://abb-bank.az/az/ferdi/tecili-kredit-sifarisi")
+          el.innerText = "Polucit kredit"  
+        }else{
+            let question = prompt('хотите сделать вклад?').toUpperCase()
+            if(question === 'DA'|| 'ДА'){
+                el.setAttribute('href', "https://abb-bank.az/en/ferdi/emanetler")
+          el.innerText = "Sdelat vklad"
+        }else{
+            el.setAttribute('href', "https://abb-bank.az/")
+          el.innerText = "Qlavnaya stranica"
+        }
+        }
+            
+    </script>
+</body>
+</html>
