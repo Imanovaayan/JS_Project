@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+            const people = [
+  {
+    name: "Kate",
+    job: "Designer",
+    money: "2000",
+  },
+  {
+    name: "Den",
+    job: "Back-end developer",
+    money: "5000",
+  },
+  {
+    name: "Snoop",
+    job: "Front-end developer",
+    money: "12000",
+  },
+  {
+    name: "Sophia",
+    job: "Designer",
+    money: "1000",
+  },
+];
+        // function returnMoney(arr){
+            
+        //     return arr.filter((item)=>item.money > 4000)
+        
+        // };
+        // console.log(returnMoney(people))
+        
+
+        // function returnResult(arr){
+        //     return arr.filter((item)=>item.name.length < 5)
+        // }
+        // console.log(returnResult(people))
+        
+        // let arr=[33,101,17,13,22,29,31,99,3]
+
+        // function sort(arr,direction){
+        //   if(direction===true){
+        //     return arr.sort((a,b)=>a-b,0)
+        //   }
+        //   else if(direction===false){
+        //     return arr.sort((a,b)=>b-a,0)
+        //   }
+
+
+        // }console.log(sort(arr,false))
+        // let arr=[3,13,17,22,29,31,33,99,101]
+        // function includes(arr,num){
+        //     for(let i=0; i<arr.length;i++){
+        //         if(arr[i]===num){
+        //             return true
+        //         }
+        //     }
+        //     return false
+        // }console.log(includes(arr,13))
+
+        // let arr=[33,44,11,29,303,1]
+        // function biggestOne(arr){
+        //     return Math.max(...arr);
+        // }console.log(biggestOne(arr))
+
+        function pickOne(arr){
+            return people[people.length-1]
+        }
+        console.log( pickOne(people))
+        
+    </script>
+</body>
+</html>

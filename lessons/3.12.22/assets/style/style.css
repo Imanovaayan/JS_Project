@@ -1,0 +1,31 @@
+a{
+    text-decoration: none;
+}
+.nav{
+    background-color: rgb(211, 168, 251);
+
+}
+
+
+li{
+   list-style: none;
+   display: inline-block;
+   margin: 30px;
+}
+
+.btn {
+    display: none;
+    height: 30px;
+}
+
+@media only screen and (max-width: 760px) {
+    .opened__nav {
+        display: none;
+    }
+    .btn {
+        display: block;
+    }
+    li{
+        display: block;
+    }
+}
