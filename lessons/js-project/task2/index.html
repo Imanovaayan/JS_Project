@@ -14,12 +14,12 @@
         el = document.createElement('a')
         document.getElementById('link_container').append(el)
         let question = prompt('хотите взять кредит?').toUpperCase()
-        if (question === 'DA'|| 'ДА'){
+        if (question === 'DA'||question === 'ДА'){
           el.setAttribute('href', "https://abb-bank.az/az/ferdi/tecili-kredit-sifarisi")
           el.innerText = "Polucit kredit"  
         }else{
             let question = prompt('хотите сделать вклад?').toUpperCase()
-            if(question === 'DA'|| 'ДА'){
+            if(question === 'DA'||question === 'ДА'){
                 el.setAttribute('href', "https://abb-bank.az/en/ferdi/emanetler")
           el.innerText = "Sdelat vklad"
         }else{

@@ -71,14 +71,14 @@
         
         function calculate() {
             
-            let initial = +form.money.value // переводим строку в число
-            if (!initial) return NaN// если строка пустая, выходим из функции
+            let initial = +form.money.value 
+            if (initial < 0) return NaN
             let interest = +form.interest.value * 0.01
-            if (!interest) return NaN
+            if (interest < 0) return NaN
             let year = +form.months.value / 365
-            if (!year) return NaN
+            if (year < 0) return NaN
             let monthly = +form.monthly.value
-            if (!monthly) return NaN
+            if (monthly < 0) return NaN
 
             let result = monthly * 12/interest * 
             (Math.pow((1 + interest/12), 12 * year) - 1) 
